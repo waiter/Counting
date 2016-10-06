@@ -52,7 +52,6 @@ class Counting extends BindComponent {
       });
     } else {
       Sound.playWithPool(Constant.sounds.deleteNone);
-      console.log('no no no');
     }
   }
 

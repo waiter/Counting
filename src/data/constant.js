@@ -1,8 +1,8 @@
 
 export default {
   maxItem: 8,
-  adKey: '',
-  testDeviceID: 'EMULATOR',
+  adKey: 'ca-app-pub-5825705564244333/3858090400',
+  // testDeviceID: 'EMULATOR',
   colors: [
     {
       topBar: 'default',

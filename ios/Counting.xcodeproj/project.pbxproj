@@ -33,6 +33,10 @@
 		A3CA107B1DA68B1D0078ECEC /* delete.wav in Resources */ = {isa = PBXBuildFile; fileRef = A3CA10771DA68B1D0078ECEC /* delete.wav */; };
 		A3CA107C1DA68B1D0078ECEC /* deleteNone.wav in Resources */ = {isa = PBXBuildFile; fileRef = A3CA10781DA68B1D0078ECEC /* deleteNone.wav */; };
 		A3CA107D1DA68B1D0078ECEC /* restart.wav in Resources */ = {isa = PBXBuildFile; fileRef = A3CA10791DA68B1D0078ECEC /* restart.wav */; };
+		A3CA107F1DA6A7710078ECEC /* UMMobClick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3CA107E1DA6A7710078ECEC /* UMMobClick.framework */; };
+		A3CA10821DA6A79D0078ECEC /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3CA10811DA6A79D0078ECEC /* CoreTelephony.framework */; };
+		A3CA10841DA6A7AA0078ECEC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A3CA10831DA6A7AA0078ECEC /* libz.tbd */; };
+		A3CA10861DA6A7B50078ECEC /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A3CA10851DA6A7B50078ECEC /* libsqlite3.tbd */; };
 		BB466908885447A79D2B488C /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE664CB5713F46E6B74076E9 /* Ionicons.ttf */; };
 		C243EB60E9C54E0BA2C1C9EA /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 37883F272D3B43F09E713C92 /* Foundation.ttf */; };
 		EA0D9DECEAD54ECDA88F795C /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA0B7E3ED1D84D2FB2CA2CB8 /* Entypo.ttf */; };
@@ -167,6 +171,10 @@
 		A3CA10771DA68B1D0078ECEC /* delete.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = delete.wav; path = ../src/sound/delete.wav; sourceTree = "<group>"; };
 		A3CA10781DA68B1D0078ECEC /* deleteNone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = deleteNone.wav; path = ../src/sound/deleteNone.wav; sourceTree = "<group>"; };
 		A3CA10791DA68B1D0078ECEC /* restart.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = restart.wav; path = ../src/sound/restart.wav; sourceTree = "<group>"; };
+		A3CA107E1DA6A7710078ECEC /* UMMobClick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMMobClick.framework; sourceTree = "<group>"; };
+		A3CA10811DA6A79D0078ECEC /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		A3CA10831DA6A7AA0078ECEC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		A3CA10851DA6A7B50078ECEC /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		CA0B7E3ED1D84D2FB2CA2CB8 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		CE664CB5713F46E6B74076E9 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		D874096FE49141FFBF7A7386 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
@@ -177,6 +185,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3CA10861DA6A7B50078ECEC /* libsqlite3.tbd in Frameworks */,
+				A3CA10841DA6A7AA0078ECEC /* libz.tbd in Frameworks */,
+				A3CA10821DA6A79D0078ECEC /* CoreTelephony.framework in Frameworks */,
 				A343BDA91DA53EDE0008A00F /* libRNSound.a in Frameworks */,
 				A343BDA81DA53EDA0008A00F /* libRNVectorIcons.a in Frameworks */,
 				A30CD9921DA3AFDE00CBC808 /* libRNAdMobManager.a in Frameworks */,
@@ -189,6 +200,7 @@
 				A30CD9911DA3AFC800CBC808 /* GoogleMobileAds.framework in Frameworks */,
 				139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */,
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
+				A3CA107F1DA6A7710078ECEC /* UMMobClick.framework in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 			);
@@ -319,6 +331,7 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				EEC35D9F6225423E96C5DC84 /* Resources */,
+				A3CA10801DA6A79D0078ECEC /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -343,6 +356,7 @@
 		A30CD98F1DA3AF9D00CBC808 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				A3CA107E1DA6A7710078ECEC /* UMMobClick.framework */,
 				A30CD9901DA3AFC800CBC808 /* GoogleMobileAds.framework */,
 			);
 			name = Framework;
@@ -362,6 +376,16 @@
 				A343BDA71DA53ECB0008A00F /* libRNSound.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A3CA10801DA6A79D0078ECEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3CA10851DA6A7B50078ECEC /* libsqlite3.tbd */,
+				A3CA10831DA6A7AA0078ECEC /* libz.tbd */,
+				A3CA10811DA6A79D0078ECEC /* CoreTelephony.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		EEC35D9F6225423E96C5DC84 /* Resources */ = {
@@ -685,6 +709,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.waiter.counting;
 				PRODUCT_NAME = Counting;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -720,6 +745,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.waiter.counting;
 				PRODUCT_NAME = Counting;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

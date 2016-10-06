@@ -14,7 +14,6 @@ const ss = {
         ss.soundMap[Constant.sounds[keys[i]]] = await Pool.createNew(ss.createSound.bind(ss, Constant.sounds[keys[i]]), 1);
       }
       ss.isInit = true;
-      console.log(ss.soundMap);
     } catch (e) {
       console.log(e);
     }
@@ -37,7 +36,7 @@ const ss = {
   },
   playWithPool: async function(key) {
     const pool = ss.soundMap[key];
-    if (pool) {
+    if (ss.isInit && pool) {
       const so = await pool.getFreeOne();
       if (so) {
         so.play(() => pool.freeOne(so));

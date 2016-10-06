@@ -12,6 +12,8 @@
 #import "RCTBundleURLProvider.h"
 #import "RCTRootView.h"
 
+#import "UMMobClick/MobClick.h"
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -31,6 +33,11 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  
+  UMConfigInstance.appKey = @"57f670a867e58e553f00390b";
+  UMConfigInstance.channelId = @"App Store";
+  [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
+  
   return YES;
 }
 
