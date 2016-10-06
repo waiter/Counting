@@ -36,6 +36,8 @@
   
   UMConfigInstance.appKey = @"57f670a867e58e553f00390b";
   UMConfigInstance.channelId = @"App Store";
+  NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+  [MobClick setAppVersion:version];
   [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
   
   return YES;
