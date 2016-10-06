@@ -438,7 +438,8 @@
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = 6MT5ECDK2B;
+						DevelopmentTeam = XA8ZGX32K6;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -682,9 +683,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = 6MT5ECDK2B;
+				DEVELOPMENT_TEAM = XA8ZGX32K6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -707,8 +709,10 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.waiter.counting;
+				PRODUCT_BUNDLE_IDENTIFIER = com.waiter.app.counting;
 				PRODUCT_NAME = Counting;
+				PROVISIONING_PROFILE = "ea944951-19c5-46c3-b57f-b94d4fa92ced";
+				PROVISIONING_PROFILE_SPECIFIER = General;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -719,8 +723,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6MT5ECDK2B;
+				DEVELOPMENT_TEAM = XA8ZGX32K6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -743,8 +748,10 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.waiter.counting;
+				PRODUCT_BUNDLE_IDENTIFIER = com.waiter.app.counting;
 				PRODUCT_NAME = Counting;
+				PROVISIONING_PROFILE = "ea944951-19c5-46c3-b57f-b94d4fa92ced";
+				PROVISIONING_PROFILE_SPECIFIER = General;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};

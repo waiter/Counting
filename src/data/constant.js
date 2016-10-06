@@ -3,6 +3,7 @@ export default {
   maxItem: 8,
   adKey: 'ca-app-pub-5825705564244333/3858090400',
   // testDeviceID: 'EMULATOR',
+  // testDeviceID: '00fda71dc67fc13903cb9f0be47c0a35',
   colors: [
     {
       topBar: 'default',
