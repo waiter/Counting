@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 
 #define XcodeAppVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+typedef void(^CallbackBlock)();
 
 /**
   REALTIME只在“集成测试”设备的DEBUG模式下有效，其它情况下的REALTIME会改为使用BATCH策略。
@@ -108,6 +109,7 @@ typedef NS_ENUM (NSUInteger, eScenarioType)
 + (void)setLogSendInterval:(double)second;
 
 
+
 #pragma mark event logs
 ///---------------------------------------------------------------------------------------
 /// @name  页面计时
@@ -182,7 +184,7 @@ typedef NS_ENUM (NSUInteger, eScenarioType)
  @return void.
  
  @warning 每个event的attributes不能超过10个
-    eventId、attributes中key和value都不能使用空格和特殊字符，且长度不能超过255个字符（否则将截取前255个字符）
+    eventId、attributes中key和value都不能使用空格和特殊字符，必须是NSString,且长度不能超过255个字符（否则将截取前255个字符）
     id， ts， du是保留字段，不能作为eventId及key的名称
 */
 + (void)beginEvent:(NSString *)eventId;
@@ -282,9 +284,5 @@ typedef NS_ENUM (NSUInteger, eScenarioType)
  */
 + (void)startSession:(NSNotification *)notification;
 
-/** 设置日志延迟发送
- @param second 设置一个[0, second]范围的延迟发送秒数，最大值1800s.
- @return void
- */
-+ (void)setLatency:(int)second;
++ (void)setCrashCBBlock:(CallbackBlock)cbBlock;
 @end

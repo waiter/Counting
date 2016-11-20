@@ -6,11 +6,13 @@ import {
   View,
   TouchableOpacity,
   StatusBar,
+  AppState,
+  Linking
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import BindComponent from './components/BindComponent';
 import Constant from './data/constant';
-import { AdMobBanner} from 'react-native-admob';
+import { AdMobBanner, AdMobInterstitial} from 'react-native-admob';
 import Sound from './sound';
 
 const colorLen = Constant.colors.length;
@@ -19,7 +21,7 @@ const colors = Constant.colors[parseInt(Math.random() * colorLen, 10)];
 
 class Counting extends BindComponent {
   constructor(props) {
-    super(props, ['addPoint', 'deletePoint', 'restart', 'getTexts']);
+    super(props, ['addPoint', 'deletePoint', 'restart', 'getTexts', 'appStateChange', 'rate']);
     this.state = {
       nowCount: 0,
       lastCounts: [],
@@ -27,6 +29,22 @@ class Counting extends BindComponent {
     };
     StatusBar.setBarStyle(colors.topBar, 'fade');
     Sound.init();
+    AdMobInterstitial.setAdUnitID(Constant.adScreenKey);
+    AdMobInterstitial.setTestDeviceID(Constant.testDeviceID);
+    AdMobInterstitial.requestAd();
+    AppState.addEventListener('change', this.appStateChange);
+  }
+
+  appStateChange(currentAppState) {
+    if (currentAppState == 'active') {
+      AdMobInterstitial.isReady((data) => {
+        if (data) {
+          AdMobInterstitial.showAd(() => AdMobInterstitial.requestAd());
+        } else {
+          AdMobInterstitial.requestAd();
+        }
+      });
+    }
   }
 
   addPoint() {
@@ -69,6 +87,10 @@ class Counting extends BindComponent {
     });
   }
 
+  rate() {
+    Linking.openURL(Constant.rateUrl);
+  }
+
   getTexts(arr, type) {
     const len = arr.length > Constant.maxItem ? Constant.maxItem : arr.length;
     const newArr = Array.from(arr.reverse());
@@ -90,6 +112,7 @@ class Counting extends BindComponent {
     const {nowCount, lastCounts, actions} = this.state;
     return (
       <View style={styles.container}>
+
         <View style={styles.show}>
           <View style={styles.leftView}>
             {this.getTexts(lastCounts, 0)}
@@ -100,6 +123,11 @@ class Counting extends BindComponent {
           <View style={styles.rightView}>
             {this.getTexts(actions, 1)}
           </View>
+          <TouchableOpacity style={styles.rate} onPress={this.rate}>
+            <View>
+              <Icon name="thumb-up" size={40} color={colors.showNum} />
+            </View>
+          </TouchableOpacity>
         </View>
         <View style={styles.btns}>
           <TouchableOpacity style={styles.restart} onPress={this.restart}>
@@ -189,6 +217,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  rate: {
+    position: 'absolute',
+    top: 25,
+    right: 10,
+    width: 40,
+    height: 40,
+  }
 });
 
 export default Counting;
